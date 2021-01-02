@@ -1,0 +1,17 @@
+version: "3"
+
+services: 
+  app:
+    build: .
+    container_name: vishwajeet
+
+    volumes: 
+      - server_volume:/registation-server/
+    ports: 
+      - "8001:80"
+
+volumes: 
+  server_volume:
+    driver: local-persist
+    driver_opts: 
+      mountpoint: /home/captain/Download/Firefox/registation/backend
